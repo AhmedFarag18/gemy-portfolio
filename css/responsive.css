@@ -12,6 +12,10 @@
   .portfolio-items {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
+  .settings {
+    width: 70%;
+    height: 70%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -39,6 +43,10 @@
   .header-btns .toggle {
     display: block;
   }
+  .settings {
+    width: 80%;
+    height: 80%;
+  }
 }
 
 @media (max-width: 575px) {
@@ -59,14 +67,17 @@
   }
   .services-items,
   .portfolio-items {
-    padding: 15px;
+    padding: 10px;
   }
   .section-padding {
     padding: 50px 0;
   }
   .services-items,
   .portfolio-items {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+  .settings-background .choose-bg {
+    grid-auto-flow: row;
   }
 }
 
@@ -92,8 +103,7 @@
   .social li {
     flex: 1 1 calc(100% / 2 - 10px);
   }
-  .services-items,
-  .portfolio-items {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  .services-item {
+    padding: 12px;
   }
 }

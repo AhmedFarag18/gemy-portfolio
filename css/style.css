@@ -1,19 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap");
+
 /*==================================
 === Main Styles  
 ==================================*/
-:root {
-  --main-color: #4868ef;
-  --bg-color: #212429;
-  --bg-light: #dee4e9;
-  --dark-white: #717275;
-  --white: #ffffff;
-  --light-mode: #ecf0f3;
-  --black: #000;
-  --shadow: 0px 0px 10px 0px;
-  --second-color: #ff014f;
-  --main-transition: 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -21,17 +11,58 @@
   scroll-behavior: smooth;
 }
 
+::selection {
+  color: #fff;
+  background-color: var(--main-color);
+}
+
+:root {
+  --main-color: hsl(252, 75%, 60%);
+  --bg-color: #cad9f3;
+  --bg-light: #dee4e9;
+  --bg-dark: rgba(182, 182, 182, 0.451);
+  --dark-white: #28282a;
+  --white: #ffffff;
+  --light-mode: #ecf0f3;
+  --black: #000;
+  --shadow: 0px 0px 10px 0px;
+  --second-color: #f6083a;
+  --main-transition: 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  --shadow-color: #00000026;
+}
+
 body {
   background-color: var(--light-mode);
-  font-family: "Montserrat", "Input Mono", "Fira Code", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  color: var(--black);
+}
+.about-title,
+.section-second-title {
+  font-family: "Silkscreen", cursive;
+}
+body.dark {
+  --main-color: hsl(229, 75%, 60%);
+  --bg-color: #212429;
+  --bg-light: #343536;
+  --dark-white: #9da1ac;
+  --bg-dark: rgba(38, 38, 38, 0.451);
+  --white: #28282f;
+  --light-mode: #222228;
+  --black: #fff;
+  --shadow: 0px 0px 10px 0px;
+  --second-color: #f6083a;
+  --main-transition: 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  --shadow-color: #00000026;
 }
 
 a {
   text-decoration: none;
 }
+
 li {
   list-style: none;
 }
+
 img {
   width: 100%;
   max-width: 100%;
@@ -40,9 +71,18 @@ img {
 .section-padding {
   padding: 80px 0;
 }
+
+p {
+  color: var(--dark-white);
+}
+
 hr {
   border: 1px solid var(--bg-light);
   margin-bottom: 40px;
+}
+ion-icon {
+  font-size: 18px;
+  margin-bottom: -3px;
 }
 /* =============
 Main Buttons 
@@ -52,7 +92,7 @@ Main Buttons
   border: 1px solid var(--main-color);
   color: var(--main-color);
   border-radius: 5px;
-  padding: 15px 22px;
+  padding: 12px 18px;
   transition: var(--main-transition);
   position: relative;
 }
@@ -77,10 +117,10 @@ Main Buttons
 }
 
 .btn-hire:hover {
-  color: var(--white);
+  color: #fff;
 }
 
-.btn-hire:hover i {
+.btn-hire:hover ion-icon {
   animation: ptf_bounce 1.5s 0.3s ease-in-out;
 }
 
@@ -120,7 +160,7 @@ Main Buttons
 
 .section-first-title:hover {
   transition-delay: var(--main-transition);
-  color: var(--white);
+  color: #fff;
 }
 
 .section-first-title:hover:after {
@@ -140,6 +180,13 @@ Main Buttons
 
 .navbar {
   padding: 20px 0;
+}
+
+.navbar-logo {
+  font-size: 60px;
+  color: var(--main-color);
+  font-weight: 900;
+  font-family: "Silkscreen", cursive;
 }
 
 .navbar-items {
@@ -192,7 +239,7 @@ Main Buttons
 ==================================*/
 
 .header-text {
-  padding: 0 50px;
+  padding: 0 50px 0 15px;
 }
 .header-small {
   font-size: 15px;
@@ -259,18 +306,16 @@ Main Buttons
 
 .social li a {
   padding: 10px 15px;
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 5px;
   color: var(--main-color);
-  box-shadow: var(--shadow) #00000032;
+  box-shadow: var(--shadow) var(--shadow-color);
   transition: 0.5s;
   position: relative;
-  filter: grayscale(100%);
 }
 
 .social li a:hover {
-  filter: none;
-  box-shadow: 0 0 1rem 5px #00000032;
+  box-shadow: 0 0 1rem 5px var(--shadow-color);
 }
 
 .header-btns {
@@ -282,9 +327,14 @@ Main Buttons
 
 .header-btns .toggle {
   display: none;
-  font-size: 30px;
   cursor: pointer;
 }
+
+.toggle ion-icon {
+  font-size: 26px;
+  color: var(--main-color);
+}
+
 /*==================================
 === About
 ==================================*/
@@ -314,7 +364,7 @@ Main Buttons
   background: var(--white);
   padding: 30px;
   border-radius: 5px;
-  box-shadow: 0px 10px 20px 3px #60606026;
+  box-shadow: 0px 10px 20px 3px var(--shadow-color);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -346,7 +396,7 @@ Main Buttons
   height: 100%;
 }
 
-.services-item-icon i {
+.services-item-icon ion-icon {
   font-size: 35px;
   color: var(--main-color);
 }
@@ -376,8 +426,8 @@ Main Buttons
 .portfolio-item {
   padding: 20px;
   border-radius: 5px;
-  background: linear-gradient(var(--bg-light), var(--white));
-  box-shadow: 0px -10px 20px 3px #c8ced40d, 0px 10px 20px 3px #0000000d;
+  background: var(--white);
+  box-shadow: 0px 10px 20px 3px var(--shadow-color);
   transition: var(--main-transition);
 }
 
@@ -411,12 +461,12 @@ Main Buttons
 
 .portfolio-item-image .img-details .portfolio-item-links {
   display: inline-block;
-  color: var(--white);
+  color: #fff;
   filter: grayscale(1);
   transition: 0.5s;
 }
 
-.portfolio-item-image .img-details .portfolio-item-links i {
+.portfolio-item-image .img-details .portfolio-item-links ion-icon {
   background: var(--main-color);
   padding: 10px;
   margin-left: 5px;
@@ -458,9 +508,8 @@ Main Buttons
   cursor: pointer;
   user-select: none;
 }
-
-.fas.fa-heart {
-  color: #ff014f;
+[name="heart"] {
+  color: #f6083a;
 }
 
 .portfolio-item-desc {
@@ -468,6 +517,173 @@ Main Buttons
   font-size: 15px;
 }
 
+/*==================================
+=== customize and settings 
+==================================*/
+
+.theme {
+  position: fixed;
+  top: 30%;
+  left: 0;
+  background-color: var(--bg-color);
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00000052;
+  z-index: 9999;
+}
+
+.theme ion-icon {
+  font-size: 25px;
+  color: var(--main-color);
+}
+
+.settings-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-dark);
+  visibility: hidden;
+  opacity: 0;
+  transform: scale3d(10, 10, 10);
+  transition: 0.5s;
+  z-index: 999;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+.settings-popup.show {
+  visibility: visible;
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+  transition: var(--main-transition);
+}
+
+.settings {
+  background-color: var(--bg-light);
+  position: fixed;
+  width: 60%;
+  height: 60%;
+  left: 50%;
+  top: 50%;
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 20px 2px #00000036;
+  max-width: 600px;
+  z-index: 999;
+}
+
+.settings .close-btn {
+  position: absolute;
+  display: inline-block;
+  right: 0px;
+  top: -50px;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.close-btn ion-icon {
+  font-size: 22px;
+}
+
+.settings-title {
+  margin: 20px 0 5px;
+  font-size: 24px;
+}
+.settings h3 {
+  margin: 10px 0;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+.settings-color,
+.settings-background {
+  margin-top: 50px;
+  padding: 0 20px;
+}
+
+.settings-color .choose-color {
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.settings-color .choose-color span {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.settings-color .choose-color span:nth-child(1) {
+  background: hsl(252, 75%, 60%);
+}
+
+.settings-color .choose-color span:nth-child(2) {
+  background: hsl(37, 75%, 60%);
+}
+
+.settings-color .choose-color span:nth-child(3) {
+  background: hsl(345, 94%, 49%);
+}
+
+.settings-color .choose-color span:nth-child(4) {
+  background: hsl(152, 75%, 60%);
+}
+
+.settings-color .choose-color span:nth-child(5) {
+  background: hsl(302, 72%, 38%);
+}
+
+.settings-color .choose-color span.active {
+  border: 5px solid #fff;
+}
+
+.settings-background .choose-bg {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 8px;
+}
+
+.settings-background .choose-bg > div {
+  padding: 0.8rem 0.2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+.settings-background .choose-bg > div.active {
+  border: 2px solid var(--main-color);
+}
+.settings-background .choose-bg .bg-1 {
+  background-color: #eee;
+  color: #212429;
+}
+.settings-background .choose-bg .bg-2 {
+  background-color: hsl(255, 30%, 17%);
+  color: #fff;
+}
+.settings-background .choose-bg .bg-3 {
+  background-color: hsl(255, 30%, 10%);
+  color: #fff;
+}
+
+.settings-background .choose-bg > div span {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+}
 /*==================================
 ===  Start animations
 ==================================*/
