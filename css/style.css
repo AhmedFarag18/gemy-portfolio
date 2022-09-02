@@ -471,12 +471,6 @@ body.dark .navbar.scroll {
   height: 100%;
   width: 100%;
 }
-.dark .portfolio-item-image img {
-  transition: 0.5s;
-  height: 100%;
-  width: 100%;
-  filter: invert(1) hue-rotate(179deg);
-}
 
 .portfolio-item-image .img-details {
   position: absolute;
@@ -516,10 +510,6 @@ body.dark .navbar.scroll {
 .portfolio-item:hover .portfolio-item-image img {
   transform: scale(1.1) rotate(-3deg);
   filter: brightness(0.3);
-}
-
-.dark .portfolio-item:hover .portfolio-item-image img {
-  filter: invert(1) hue-rotate(179deg) brightness(0.3);
 }
 
 .portfolio-item:hover .portfolio-item-image .img-details {
