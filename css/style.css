@@ -25,7 +25,7 @@
   --white: #ffffff;
   --light-mode: #ecf0f3;
   --black: #000;
-  --shadow: 0px 0px 10px 0px;
+  --shadow: 0rem 0rem 0.625rem 0rem;
   --second-color: #f6083a;
   --main-transition: 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
   --shadow-color: #00000026;
@@ -36,10 +36,7 @@ body {
   font-family: "Montserrat", sans-serif;
   color: var(--black);
 }
-.about-title,
-.section-second-title {
-  font-family: "Silkscreen", cursive;
-}
+
 body.dark {
   --main-color: hsl(229, 75%, 60%);
   --bg-color: #212429;
@@ -49,7 +46,7 @@ body.dark {
   --white: #28282f;
   --light-mode: #222228;
   --black: #fff;
-  --shadow: 0px 0px 10px 0px;
+  --shadow: 0rem 0rem 0.625rem 0rem;
   --second-color: #f6083a;
   --main-transition: 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
   --shadow-color: #00000026;
@@ -68,31 +65,37 @@ img {
   max-width: 100%;
 }
 
-.section-padding {
-  padding: 80px 0;
-}
-
 p {
   color: var(--dark-white);
 }
 
 hr {
-  border: 1px solid var(--bg-light);
-  margin-bottom: 40px;
+  border: 0.0625rem solid var(--bg-light);
+  margin-bottom: 2.5rem;
 }
 ion-icon {
-  font-size: 18px;
-  margin-bottom: -3px;
+  font-size: 1.125rem;
+  margin-bottom: -0.1875rem;
 }
+
+.about-title,
+.section-second-title {
+  font-family: "Silkscreen", cursive;
+}
+
+.section-padding {
+  padding: 5rem 0;
+}
+
 /* =============
 Main Buttons 
 ====================*/
 
 .btn-hire {
-  border: 1px solid var(--main-color);
+  border: 0.0625rem solid var(--main-color);
   color: var(--main-color);
-  border-radius: 5px;
-  padding: 12px 18px;
+  border-radius: 0.3125rem;
+  padding: 0.75rem 1.125rem;
   transition: var(--main-transition);
   position: relative;
 }
@@ -130,14 +133,14 @@ Main Buttons
 
 .section-title {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 3.75rem;
 }
 
 .section-first-title {
   color: var(--main-color);
   position: relative;
-  margin-bottom: 30px;
-  font-size: 15px;
+  margin-bottom: 1.875rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   text-transform: uppercase;
   display: inline-block;
@@ -147,12 +150,12 @@ Main Buttons
 .section-first-title::after {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: -0.625rem;
   left: 50%;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   transform: translateX(-50%);
-  width: 40px;
-  height: 3px;
+  width: 2.5rem;
+  height: 0.1875rem;
   background-color: var(--main-color);
   transition: var(--main-transition);
   z-index: -1;
@@ -169,7 +172,7 @@ Main Buttons
 }
 
 .section-second-title {
-  font-size: 24px;
+  font-size: 1.5rem;
   text-transform: capitalize;
   font-weight: 600;
 }
@@ -179,11 +182,34 @@ Main Buttons
 ==================================*/
 
 .navbar {
-  padding: 20px 0;
+  padding: 1.25rem 0;
+  transition: 0.5s;
+}
+
+.navbar.scroll {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: 0.5s;
+  padding: 0.5rem 0;
+  background: #edf0f273;
+  box-shadow: 0 8px 32px 0 #6666665e;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid #ffffff2e;
+}
+
+body.dark .navbar.scroll {
+  background: #22222873;
+  box-shadow: 0 8px 32px 0 #0000005e;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid #2222282e;
 }
 
 .navbar-logo {
-  font-size: 60px;
+  font-size: 3.75rem;
   color: var(--main-color);
   font-weight: 900;
   font-family: "Silkscreen", cursive;
@@ -193,16 +219,17 @@ Main Buttons
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
-.navbar-items ul {
+.navbar-links {
   display: flex;
 }
 
 .navbar-items ul li .nav-link {
-  padding: 10px 15px;
-  margin: 5px;
-  font-size: 16px;
+  padding: 0.625rem 0.9375rem;
+  margin: 0.3125rem;
+  font-size: 1rem;
   transition: var(--main-transition);
   color: var(--black);
   position: relative;
@@ -218,10 +245,10 @@ Main Buttons
   content: "";
   position: absolute;
   width: 0%;
-  height: 20px;
+  height: 1.25rem;
   top: 50%;
   right: 0;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   background-color: var(--white);
   z-index: -1;
   transition: 0.5s;
@@ -239,15 +266,16 @@ Main Buttons
 ==================================*/
 
 .header-text {
-  padding: 0 50px 0 15px;
+  padding: 0 3.125rem 0 0.9375rem;
 }
 .header-small {
-  font-size: 15px;
+  font-size: 0.9375rem;
   text-transform: uppercase;
 }
 
 .header-title {
-  font-size: 50px;
+  font-size: 3.125rem;
+  text-transform: capitalize;
 }
 
 .header-title span {
@@ -260,8 +288,8 @@ Main Buttons
 }
 
 .header-desc {
-  margin-top: 30px;
-  padding: 0 80px 0 0px;
+  margin-top: 1.875rem;
+  padding: 0 10rem 0 0rem;
   line-height: 1.6;
 }
 
@@ -270,7 +298,7 @@ Main Buttons
 }
 
 .links {
-  margin-top: 120px;
+  margin-top: 7.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -281,7 +309,7 @@ Main Buttons
   justify-content: start;
   align-items: start;
   flex-direction: column;
-  gap: 30px;
+  gap: 1.875rem;
 }
 
 .links_left span {
@@ -292,22 +320,22 @@ Main Buttons
 
 .social {
   display: flex;
-  gap: 10px;
-  font-size: 20px;
+  gap: 0.625rem;
+  font-size: 1.25rem;
   flex-wrap: wrap;
 }
 
 .social li {
-  flex: 1 1 calc(100% / 4 - 20px);
+  flex: 1 1 calc(100% / 4 - 1.25rem);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .social li a {
-  padding: 10px 15px;
+  padding: 0.625rem 0.9375rem;
   background-color: var(--white);
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   color: var(--main-color);
   box-shadow: var(--shadow) var(--shadow-color);
   transition: 0.5s;
@@ -315,14 +343,14 @@ Main Buttons
 }
 
 .social li a:hover {
-  box-shadow: 0 0 1rem 5px var(--shadow-color);
+  box-shadow: 0 0 1rem 0.3125rem var(--shadow-color);
 }
 
 .header-btns {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .header-btns .toggle {
@@ -331,7 +359,7 @@ Main Buttons
 }
 
 .toggle ion-icon {
-  font-size: 26px;
+  font-size: 1.625rem;
   color: var(--main-color);
 }
 
@@ -345,15 +373,15 @@ Main Buttons
   align-items: center;
 }
 .about-text {
-  padding: 40px;
+  padding: 2.5rem;
 }
 .about-title {
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 .about-desc p {
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 /*==================================
@@ -362,13 +390,13 @@ Main Buttons
 
 .services-item {
   background: var(--white);
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0px 10px 20px 3px var(--shadow-color);
+  padding: 1.875rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0rem 0.625rem 1.25rem 0.1875rem var(--shadow-color);
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 1.875rem;
   position: relative;
 }
 
@@ -376,8 +404,8 @@ Main Buttons
 .services-item::after {
   content: "";
   position: absolute;
-  width: 3px;
-  height: 0px;
+  width: 0.1875rem;
+  height: 0rem;
   background-color: var(--main-color);
   transition: 0.5s;
 }
@@ -397,18 +425,18 @@ Main Buttons
 }
 
 .services-item-icon ion-icon {
-  font-size: 35px;
+  font-size: 2.1875rem;
   color: var(--main-color);
 }
 
 .services-item-title {
-  /* margin: 30px 0 20px; */
+  /* margin: 1.875rem 0 1.25rem; */
   text-transform: capitalize;
 }
 
 .services-item-desc {
   color: var(--dark-white);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -420,14 +448,14 @@ Main Buttons
 .services-items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 1.875rem;
 }
 
 .portfolio-item {
-  padding: 20px;
-  border-radius: 5px;
+  padding: 1.25rem;
+  border-radius: 0.3125rem;
   background: var(--white);
-  box-shadow: 0px 10px 20px 3px var(--shadow-color);
+  box-shadow: 0rem 0.625rem 1.25rem 0.1875rem var(--shadow-color);
   transition: var(--main-transition);
 }
 
@@ -442,6 +470,12 @@ Main Buttons
   transition: 0.5s;
   height: 100%;
   width: 100%;
+}
+.dark .portfolio-item-image img {
+  transition: 0.5s;
+  height: 100%;
+  width: 100%;
+  filter: invert(1) hue-rotate(179deg);
 }
 
 .portfolio-item-image .img-details {
@@ -468,10 +502,10 @@ Main Buttons
 
 .portfolio-item-image .img-details .portfolio-item-links ion-icon {
   background: var(--main-color);
-  padding: 10px;
-  margin-left: 5px;
-  font-size: 18px;
-  border-radius: 50px;
+  padding: 0.625rem;
+  margin-left: 0.3125rem;
+  font-size: 1.125rem;
+  border-radius: 3.125rem;
   transition: 0.5s;
 }
 
@@ -484,6 +518,10 @@ Main Buttons
   filter: brightness(0.3);
 }
 
+.dark .portfolio-item:hover .portfolio-item-image img {
+  filter: invert(1) hue-rotate(179deg) brightness(0.3);
+}
+
 .portfolio-item:hover .portfolio-item-image .img-details {
   visibility: visible;
   transform: translate(-50%, -50%) scale(1, 1);
@@ -494,14 +532,15 @@ Main Buttons
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
-  font-size: 15px;
+  margin-top: 1.25rem;
+  font-size: 0.9375rem;
 }
 
 .portfolio-item-title {
   color: var(--main-color);
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .portfolio-item-heart {
@@ -513,8 +552,8 @@ Main Buttons
 }
 
 .portfolio-item-desc {
-  margin-top: 20px;
-  font-size: 15px;
+  margin-top: 1.25rem;
+  font-size: 1rem;
 }
 
 /*==================================
@@ -526,14 +565,14 @@ Main Buttons
   top: 30%;
   left: 0;
   background-color: var(--bg-color);
-  padding: 10px;
+  padding: 0.625rem;
   cursor: pointer;
-  box-shadow: 0 0 10px #00000052;
+  box-shadow: 0 0 0.625rem #00000052;
   z-index: 9999;
 }
 
 .theme ion-icon {
-  font-size: 25px;
+  font-size: 1.5625rem;
   color: var(--main-color);
 }
 
@@ -548,7 +587,7 @@ Main Buttons
   opacity: 0;
   transform: scale3d(10, 10, 10);
   transition: 0.5s;
-  z-index: 999;
+  z-index: 999999;
   text-align: center;
   display: grid;
   place-items: center;
@@ -565,60 +604,60 @@ Main Buttons
   background-color: var(--bg-light);
   position: fixed;
   width: 60%;
-  height: 60%;
+  padding: 50px 5px;
   left: 50%;
   top: 50%;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   transform: translate(-50%, -50%);
-  box-shadow: 0px 0px 20px 2px #00000036;
-  max-width: 600px;
+  box-shadow: 0rem 0rem 1.25rem 0.125rem #00000036;
+  max-width: 37.5rem;
   z-index: 999;
 }
 
 .settings .close-btn {
   position: absolute;
   display: inline-block;
-  right: 0px;
-  top: -50px;
+  right: 0rem;
+  top: -3.125rem;
   background-color: var(--main-color);
   color: #fff;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
   cursor: pointer;
 }
 .close-btn ion-icon {
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 
 .settings-title {
-  margin: 20px 0 5px;
-  font-size: 24px;
+  margin: 1.25rem 0 0.3125rem;
+  font-size: 1.5rem;
 }
 .settings h3 {
-  margin: 10px 0;
+  margin: 0.625rem 0;
   text-transform: capitalize;
   font-weight: 700;
 }
 .settings-color,
 .settings-background {
-  margin-top: 50px;
-  padding: 0 20px;
+  margin-top: 3.125rem;
+  padding: 0 1.25rem;
 }
 
 .settings-color .choose-color {
   background-color: var(--bg-color);
-  border-radius: 5px;
-  padding: 10px 15px;
+  border-radius: 0.3125rem;
+  padding: 0.625rem 0.9375rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 0.3125rem;
 }
 
 .settings-color .choose-color span {
-  width: 26px;
-  height: 26px;
+  width: 1.625rem;
+  height: 1.625rem;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -644,13 +683,13 @@ Main Buttons
 }
 
 .settings-color .choose-color span.active {
-  border: 5px solid #fff;
+  border: 0.3125rem solid #fff;
 }
 
 .settings-background .choose-bg {
   display: grid;
   grid-auto-flow: column;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .settings-background .choose-bg > div {
@@ -663,8 +702,13 @@ Main Buttons
   cursor: pointer;
 }
 .settings-background .choose-bg > div.active {
-  border: 2px solid var(--main-color);
+  border: 0.125rem solid var(--main-color);
 }
+
+.settings-background .choose-bg > div.active span {
+  background: var(--main-color);
+}
+
 .settings-background .choose-bg .bg-1 {
   background-color: #eee;
   color: #212429;
@@ -679,10 +723,10 @@ Main Buttons
 }
 
 .settings-background .choose-bg > div span {
-  width: 18px;
-  height: 18px;
+  width: 1.125rem;
+  height: 1.125rem;
   border-radius: 50%;
-  border: 1px solid #aaa;
+  border: 0.0625rem solid #aaa;
 }
 /*==================================
 ===  Start animations
@@ -699,24 +743,24 @@ Main Buttons
   }
 
   40% {
-    -webkit-transform: translateY(-10px);
-    transform: translateY(-10px);
+    -webkit-transform: translateY(-0.625rem);
+    transform: translateY(-0.625rem);
   }
 
   60% {
-    -webkit-transform: translateY(-5px);
-    transform: translateY(-5px);
+    -webkit-transform: translateY(-0.3125rem);
+    transform: translateY(-0.3125rem);
   }
 }
 
 @keyframes title_bounce {
   30% {
-    width: 40px;
-    height: 3px;
+    width: 2.5rem;
+    height: 0.1875rem;
   }
   to {
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 0.625rem;
   }
 }
