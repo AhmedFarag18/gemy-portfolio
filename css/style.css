@@ -233,6 +233,7 @@ body.dark .navbar.scroll {
   transition: var(--main-transition);
   color: var(--black);
   position: relative;
+  text-transform: capitalize;
 }
 
 .navbar ul li a:hover,
@@ -547,6 +548,60 @@ body.dark .navbar.scroll {
 }
 
 /*==================================
+=== resume & experience 
+==================================*/
+.experience-items {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  align-items: center;
+}
+.experience-item {
+  background-color: var(--white);
+  padding: 25px 25px 30px;
+  position: relative;
+  flex: 1 1 calc(100% / 2 - 40px);
+  max-width: calc(100% / 2 - 40px);
+  margin-left: 25px;
+  border-radius: 5px;
+  box-shadow: 0rem 0.625rem 1.25rem 0.1875rem var(--shadow-color);
+}
+
+.experience-item::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: var(--main-color);
+  position: absolute;
+  left: -20px;
+  top: 0;
+}
+.experience-item::after {
+  position: absolute;
+  content: "";
+  left: -25px;
+  top: 20%;
+  background-color: var(--main-color);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.experience-item:not(.end):before {
+  height: 130%;
+}
+
+.experience-item-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.experience-item-date {
+  font-size: 1rem;
+  display: inline-block;
+  color: var(--main-color);
+  margin: 2px 0 10px;
+}
+
+/*==================================
 === customize and settings 
 ==================================*/
 
@@ -628,10 +683,53 @@ body.dark .navbar.scroll {
   text-transform: capitalize;
   font-weight: 700;
 }
+
+.font-size,
 .settings-color,
 .settings-background {
   margin-top: 3.125rem;
   padding: 0 1.25rem;
+}
+
+.font-column {
+  background-color: var(--bg-color);
+  border-radius: 0.3125rem;
+  padding: 0.625rem 0.9375rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3125rem;
+}
+.font-column > span {
+  padding: 5px;
+}
+
+.fonts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aliceblue;
+  flex: 1 1;
+  height: 3px;
+}
+
+.fonts span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+}
+
+.fonts span.active {
+  width: 18px;
+  height: 18px;
+  opacity: 1;
+  border: 3px solid #fff;
 }
 
 .settings-color .choose-color {
