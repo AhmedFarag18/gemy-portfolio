@@ -78,6 +78,7 @@
   }
   .settings {
     width: 80%;
+    top: 60%;
   }
   .experience-item {
     padding: 25px 25px 30px;
@@ -178,7 +179,7 @@
     max-width: 100%;
   }
   .settings {
-    top: 60%;
+    top: 70%;
   }
 }
 

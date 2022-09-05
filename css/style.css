@@ -52,6 +52,10 @@ body.dark {
   --shadow-color: #00000026;
 }
 
+body.hide-scrolling {
+  overflow-y: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -643,6 +647,7 @@ body.dark .navbar.scroll {
   opacity: 1;
   transform: scale3d(1, 1, 1);
   transition: var(--main-transition);
+  overflow-y: auto;
 }
 
 .settings {

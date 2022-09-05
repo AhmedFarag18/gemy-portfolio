@@ -1,4 +1,5 @@
 /* ================== Select Al HTML Elements Neded ================== */
+let navLinks = document.querySelectorAll(".nav-link");
 let heartIcons = document.querySelectorAll(".portfolio-item-heart");
 let dropdown = document.querySelector('.navbar-links');
 let toggleBtn = document.querySelector('.toggle');
@@ -40,6 +41,49 @@ window.onscroll = () => {
   }
 };
 
+function removeActiveLink() {
+  navLinks.forEach((nav) => {
+    nav.classList.remove("active");
+  });
+}
+// function to handle active link
+function activeMenuLink(e) {
+  e.preventDefault();
+  removeActiveLink();
+  const href = "#" + this.getAttribute("name");
+  const offsetTop = document.querySelector(href).offsetTop;
+  this.classList.add("active");
+  scroll({
+    top: offsetTop,
+    behavior: "smooth"
+  });
+  window.location.hash = this.getAttribute("name");
+}
+navLinks.forEach((nav) => {
+  nav.addEventListener("click", activeMenuLink);
+});
+
+/*================== Active link When Scroll and Refresh Page =======================*/
+let sections = document.querySelectorAll("section");
+
+function changeLinkState() {
+  let index = sections.length;
+
+  for (; --index && window.scrollY + 50 < sections[ index ].offsetTop;) { }
+  removeActiveLink();
+  navLinks[ index ].classList.add('active');
+}
+// this to change active link when make refresh page
+changeLinkState();
+// this for change active link when scroll
+window.addEventListener('scroll', changeLinkState);
+
+
+/* ============= Toggle Body Scrolling =======================*/
+function toggleBodyScrolling() {
+  document.body.classList.toggle("hide-scrolling");
+}
+
 /* ================== show and hide dropdoen menu ================== */
 toggleBtn.addEventListener("click", () => {
   dropdown.classList.toggle("dropdown");
@@ -48,14 +92,17 @@ toggleBtn.addEventListener("click", () => {
 /*==================  show and hide settings popup  =======================*/
 function openThemePopup() {
   popup.classList.add("show");
+  toggleBodyScrolling();
 }
 function closeThemePopup(e) {
   if (e.target.classList.contains("settings-popup")) {
     popup.classList.remove("show");
+    toggleBodyScrolling();
   }
 }
 closeBtn.addEventListener("click", () => {
   popup.classList.remove("show");
+  toggleBodyScrolling();
 });
 themeBtn.addEventListener("click", openThemePopup);
 popup.addEventListener("click", closeThemePopup);
@@ -71,7 +118,6 @@ function chooseFont(selectedFont) {
   document.querySelector("html").style.fontSize = `${selectedFont.getAttribute('data-size')}px`;
   removeFontActive();
   selectedFont.classList.add("active");
-  console.log(selectedFont);
   localStorage.setItem("gemy-font", selectedFont.getAttribute('data-size'));
 }
 font14.addEventListener("click", () => chooseFont(font14));
@@ -196,4 +242,3 @@ heartIcons.forEach(her => {
 });
 
 
-/*================== experience  =======================*/
