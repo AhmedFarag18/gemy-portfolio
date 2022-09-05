@@ -85,6 +85,9 @@
     flex: 1 1 calc(100% / 1 - 40px);
     max-width: calc(100% / 1 - 40px);
   }
+  .form {
+    margin-top: 40px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -121,11 +124,13 @@
   .settings-title {
     font-size: 1.2rem;
   }
-
   .experience-item {
     padding: 25px 25px 30px;
     flex: 1 1 calc(100% / 1 - 40px);
     margin-left: 0px;
+  }
+  .contact-details-info {
+    font-size: 0.925rem;
   }
 }
 
@@ -180,6 +185,16 @@
   }
   .settings {
     top: 70%;
+  }
+  .contact-details-info {
+    font-size: 0.825rem;
+  }
+  .form {
+    padding: 1rem;
+  }
+  input,
+  textarea {
+    padding: 0.5rem;
   }
 }
 

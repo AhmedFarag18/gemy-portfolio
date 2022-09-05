@@ -18,7 +18,7 @@
 
 :root {
   --main-color: hsl(252, 75%, 60%);
-  --bg-color: #cad9f3;
+  --bg-color: #efefef;
   --bg-light: #dee4e9;
   --bg-dark: rgba(182, 182, 182, 0.451);
   --dark-white: #28282a;
@@ -102,6 +102,7 @@ Main Buttons
   padding: 0.75rem 1.125rem;
   transition: var(--main-transition);
   position: relative;
+  z-index: 1;
 }
 
 .btn-hire::before {
@@ -603,6 +604,61 @@ body.dark .navbar.scroll {
   display: inline-block;
   color: var(--main-color);
   margin: 2px 0 10px;
+}
+
+/*==================================
+=== contact
+==================================*/
+
+.row.form-inputs {
+  gap: 25px 0;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
+
+.contact-detail {
+  padding: 30px 15px;
+  background: var(--white);
+}
+
+.contact-details-info {
+  font-size: 1rem;
+}
+
+.contact-details-icon ion-icon {
+  font-size: 2.125rem;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+
+.form {
+  padding: 2rem;
+  background: var(--white);
+  height: 100%;
+}
+
+input,
+textarea {
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  background: var(--light-mode);
+  border: 1px solid var(--shadow-color);
+  color: var(--black);
+  font-family: "poppins";
+  /* box-shadow: 0rem 0.625rem 1.25rem 0.1875rem var(--shadow-color); */
+}
+
+.btn-send {
+  margin-top: 10px;
+  display: inline-block;
 }
 
 /*==================================
