@@ -9,7 +9,7 @@
 
 @media (max-width: 991px) {
   .navbar-items ul li .nav-link {
-    padding: 0.625rem 0.5rem;
+    padding: 0.625rem 0.2rem;
   }
   .services-items,
   .portfolio-items {
@@ -23,6 +23,10 @@
   }
   .header-title {
     font-size: 2.8rem;
+  }
+  .skills .skills-item {
+    flex: 1 1 calc(100% / 4 - 20px);
+    max-width: calc(100% / 4 - 20px);
   }
 }
 
@@ -43,7 +47,7 @@
     font-size: 2.625rem;
   }
   .navbar-items ul li .nav-link {
-    padding: 0.625rem 0.625rem;
+    padding: 0.625rem 0.925rem;
   }
 
   .navbar-items .navbar-links {
@@ -91,6 +95,10 @@
   .form {
     margin-top: 40px;
   }
+  .skills .skills-item {
+    flex: 1 1 calc(100% / 3 - 20px);
+    max-width: calc(100% / 3 - 20px);
+  }
 }
 
 @media (max-width: 575px) {
@@ -134,6 +142,15 @@
   }
   .contact-details-info {
     font-size: 0.925rem;
+    overflow-wrap: break-word;
+  }
+  .skills .skills-item {
+    flex: 1 1 calc(100% / 2 - 20px);
+    max-width: calc(100% / 2 - 20px);
+  }
+  .skills .skills-items {
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -198,6 +215,17 @@
   input,
   textarea {
     padding: 0.5rem;
+  }
+  .other-skills {
+    padding: 4px;
+  }
+  .other-skills span {
+    padding: 8px;
+    font-size: 0.825rem;
+  }
+  .skills .skills-item {
+    flex: 1 1 calc(100% / 1 - 20px);
+    max-width: calc(100% / 1 - 20px);
   }
 }
 

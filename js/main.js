@@ -69,7 +69,7 @@ let sections = document.querySelectorAll("section");
 function changeLinkState() {
   let index = sections.length;
 
-  for (; --index && window.scrollY + 50 < sections[ index ].offsetTop;) { }
+  for (; --index && window.scrollY + 100 < sections[ index ].offsetTop;) { }
   removeActiveLink();
   navLinks[ index ].classList.add('active');
 }

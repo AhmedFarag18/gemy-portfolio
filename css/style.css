@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap");
 
 /*==================================
@@ -29,6 +30,7 @@
   --second-color: #f6083a;
   --main-transition: 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
   --shadow-color: #00000026;
+  --second-shadow: 0rem 0.625rem 1.25rem 0.1875rem var(--shadow-color);
 }
 
 body {
@@ -50,6 +52,7 @@ body.dark {
   --second-color: #f6083a;
   --main-transition: 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
   --shadow-color: #00000026;
+  --second-shadow: 0rem 0.625rem 1.25rem 0.1875rem var(--shadow-color);
 }
 
 body.hide-scrolling {
@@ -235,7 +238,7 @@ body.dark .navbar.scroll {
   padding: 0.625rem 0.9375rem;
   margin: 0.3125rem;
   font-size: 1rem;
-  transition: var(--main-transition);
+  transition: 0.3s;
   color: var(--black);
   position: relative;
   text-transform: capitalize;
@@ -398,7 +401,7 @@ body.dark .navbar.scroll {
   background: var(--white);
   padding: 1.875rem;
   border-radius: 0.3125rem;
-  box-shadow: 0rem 0.625rem 1.25rem 0.1875rem var(--shadow-color);
+  box-shadow: var(--second-shadow);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -461,7 +464,7 @@ body.dark .navbar.scroll {
   padding: 1.25rem;
   border-radius: 0.3125rem;
   background: var(--white);
-  box-shadow: 0rem 0.625rem 1.25rem 0.1875rem var(--shadow-color);
+  box-shadow: var(--second-shadow);
   transition: var(--main-transition);
 }
 
@@ -569,7 +572,7 @@ body.dark .navbar.scroll {
   max-width: calc(100% / 2 - 40px);
   margin-left: 25px;
   border-radius: 5px;
-  box-shadow: 0rem 0.625rem 1.25rem 0.1875rem var(--shadow-color);
+  box-shadow: var(--second-shadow);
 }
 
 .experience-item::before {
@@ -604,6 +607,77 @@ body.dark .navbar.scroll {
   display: inline-block;
   color: var(--main-color);
   margin: 2px 0 10px;
+}
+
+/*==================================
+=== Skills
+==================================*/
+.skills .skills-items {
+  gap: 20px;
+}
+
+.skills .skills-item {
+  flex: 1 1 calc(100% / 6 - 20px);
+  max-width: calc(100% / 6 - 20px);
+  position: relative;
+  padding: 20px;
+  background: var(--white);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--second-shadow);
+  transition: 0.5s;
+}
+
+.skills .skills-item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  left: 3px;
+  top: 3px;
+  opacity: 0;
+  transition: 0.4s;
+  border-radius: 5px;
+  z-index: -1;
+}
+
+.skills .skills-item:hover::before {
+  opacity: 1;
+}
+
+.skills .skill-img {
+  width: 100%;
+}
+
+.skills .skill-name {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+
+.other-skills {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: var(--second-shadow);
+}
+
+.other-skills span {
+  padding: 15px;
+  display: inline-block;
+  margin: 5px;
+  border: 2px solid var(--bg-color);
+  font-size: 0.925rem;
+  color: var(--dark-white);
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+  z-index: 1;
 }
 
 /*==================================
@@ -642,8 +716,7 @@ body.dark .navbar.scroll {
   height: 100%;
 }
 
-input,
-textarea {
+.form-input {
   padding: 1rem;
   height: 100%;
   width: 100%;
@@ -652,8 +725,7 @@ textarea {
   background: var(--light-mode);
   border: 1px solid var(--shadow-color);
   color: var(--black);
-  font-family: "poppins";
-  /* box-shadow: 0rem 0.625rem 1.25rem 0.1875rem var(--shadow-color); */
+  font-family: "poppins", sans-serif;
 }
 
 .btn-send {

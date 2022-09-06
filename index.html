@@ -10,7 +10,7 @@
     content="Profile, Portfolio, html, css, javascript, jquery, bootstrap, sass, responsive design, front-end" />
   <meta name="theme-color" content="#212429" />
   <meta property="og:title" content="Gemy Resume" />
-  <link rel="shortcut icon" href="images/logo.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
   <link href="css/bootstrap-grid.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
@@ -38,8 +38,12 @@
             <a class="nav-link" href="#" name="portfolio">Portfolio</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#" name="skills">skills</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#" name="resume">resume</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="#" name="contact">Contact</a>
           </li>
@@ -330,7 +334,89 @@
   </section>
   <!-- End portfolio -->
 
+  <section class="skills section-padding" id="skills">
+    <div class="container">
+      <hr>
+      <div class="row">
+        <div class="section-title">
+          <p class="section-first-title">skills</p>
+          <p class="section-second-title">My best skills</p>
+        </div>
+      </div>
+      <div class="row skills-items">
+        <!-- Start Skill column -->
+        <div class="skills-item">
+          <div class="skill-img">
+            <img src="images/skills/icons8-java.svg" alt="skill">
+          </div>
+          <div class="skill-name">JAVA</div>
+        </div>
+        <!-- Start Skill column -->
+        <div class="skills-item">
+          <div class="skill-img">
+            <img src="images/skills/icons8-kotlin.svg" alt="skill">
+          </div>
+          <div class="skill-name">kotlin</div>
+        </div>
+        <!-- Start Skill column -->
+        <div class="skills-item">
+          <div class="skill-img">
+            <img src="images/skills/icons8-android-os.svg" alt="skill">
+          </div>
+          <div class="skill-name">Android</div>
+        </div>
 
+        <!-- Start Skill column -->
+        <div class="skills-item">
+          <div class="skill-img">
+            <img src="images/skills/icons8-firebase.svg" alt="skill">
+          </div>
+          <div class="skill-name">firebase</div>
+        </div>
+
+        <!-- Start Skill column -->
+        <div class="skills-item">
+          <div class="skill-img">
+            <img src="images/skills/icons8-github (1).svg" alt="skill">
+          </div>
+          <div class="skill-name">github</div>
+        </div>
+
+        <!-- Start Skill column -->
+        <div class="skills-item">
+          <div class="skill-img">
+            <img src="images/skills/icons8-git.svg" alt="skill">
+          </div>
+          <div class="skill-name">git</div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <p class="section-second-title mt-5 mb-3">Other skills</p>
+          <div class="other-skills">
+            <span>OOP</span>
+            <span>Design Patterns</span>
+            <span>Architecture Pattern( MVVM, MVC, MVP)</span>
+            <span>DataStore DB</span>
+            <span>Google Material Design</span>
+            <span>Dependency Injection (Dagger hilt, koin)</span>
+            <span>Navgation Components</span><span>Room Database</span>
+            <span>Retrofit Library</span><span>RX (Java,Android)</span>
+            <span>Coroutines, Flow</span>
+            <span>FCM(Firebase Cloud Messaging)</span>
+            <span>Ktor (server, client)</span><span>Jetpack Compose</span>
+            <span>KMM (Kotlin multiplatform)</span>
+            <span>NFC(Near field communication</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Start Resume -->
   <section class="resume section-padding" id="resume">
     <div class="container">
       <hr>
@@ -375,8 +461,9 @@
     </div>
 
   </section>
+  <!-- End Resume && education -->
 
-
+  <!-- Start Contact -->
   <section class="contact section-padding" id="contact">
     <div class="container">
       <hr>
@@ -410,7 +497,7 @@
                 <ion-icon name="mail-outline"></ion-icon>
               </span>
               <p class="contact-details-info">
-                gamalragab217@ gmail.com
+                gamalragab217@gmail.com
               </p>
             </div>
             <div class="contact-detail">
@@ -427,19 +514,20 @@
           <form class="form">
             <div class="row form-inputs">
               <div class="col-md-6">
-                <input type="text" name="name" id="name" placeholder="Enter Your Name">
+                <input type="text" name="name" id="name" class="form-input" placeholder="Enter Your Name">
               </div>
               <div class="col-md-6">
-                <input type="text" name="phone" id="phone" placeholder="Enter Your phone">
+                <input type="text" name="phone" id="phone" class="form-input" placeholder="Enter Your phone">
               </div>
               <div class="col-md-6">
-                <input type="email" name="email" id="email" placeholder="Enter Your email">
+                <input type="email" name="email" id="email" class="form-input" placeholder="Enter Your email">
               </div>
               <div class="col-md-6">
-                <input type="text" name="subject" id="subject" placeholder="Enter Your subject">
+                <input type="text" name="subject" id="subject" class="form-input" placeholder="Enter Your subject">
               </div>
               <div class="col-md-12">
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Type your message"></textarea>
+                <textarea name="message" id="message" cols="30" rows="10" class="form-input"
+                  placeholder="Type your message"></textarea>
               </div>
               <div class="col-md-12">
                 <a href="#" class="btn-hire btn-send">send Message <ion-icon name="paper-plane-outline"></ion-icon></a>
@@ -450,6 +538,7 @@
       </div>
     </div>
   </section>
+  <!-- End Contact && education -->
 
   <!-- Start Cusomize && page setting  -->
   <div class="theme">
