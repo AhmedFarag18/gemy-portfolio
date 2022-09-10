@@ -93,6 +93,38 @@ ion-icon {
 .section-padding {
   padding: 5rem 0;
 }
+/*----------------- alerts ---------------- */
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert {
+  position: fixed;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  z-index: 9999999;
+  left: 50%;
+  top: -115px;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
+}
+
+.form_alerts {
+  display: block;
+  position: relative;
+  transition: all 0.5s ease;
+}
 
 /* =============
 Main Buttons 
@@ -106,6 +138,9 @@ Main Buttons
   transition: var(--main-transition);
   position: relative;
   z-index: 1;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 1rem;
 }
 
 .btn-hire::before {
@@ -133,6 +168,33 @@ Main Buttons
 
 .btn-hire:hover ion-icon {
   animation: ptf_bounce 1.5s 0.3s ease-in-out;
+}
+
+.btn-toTop {
+  position: fixed;
+  right: 10px;
+  bottom: 110%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.btn-toTop ion-icon {
+  animation: spin_top 0.8s infinite alternate;
+}
+
+.btn-toTop.show {
+  bottom: 10px;
+  animation: spin_toTop var(--main-transition);
 }
 
 /*==============================
@@ -731,6 +793,27 @@ body.dark .navbar.scroll {
 .btn-send {
   margin-top: 10px;
   display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-send:hover {
+  color: #fff;
+}
+
+/*==================================
+== footer
+===================================*/
+
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1rem;
+}
+
+.footer a {
+  color: var(--main-color);
+  font-weight: bold;
 }
 
 /*==================================
@@ -983,5 +1066,20 @@ body.dark .navbar.scroll {
     width: 100%;
     height: 100%;
     padding: 0.625rem;
+  }
+}
+
+@keyframes spin_top {
+  to {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes spin_toTop {
+  0% {
+    bottom: 110%;
+  }
+  100% {
+    bottom: 2%;
   }
 }

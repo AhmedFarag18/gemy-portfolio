@@ -10,6 +10,7 @@ let body = document.querySelector("body");
 let themeBtn = document.querySelector(".theme");
 let popup = document.querySelector(".settings-popup");
 let closeBtn = document.querySelector(".close-btn");
+let btnToTop = document.querySelector(".btn-toTop");
 // select backgrounds and colors
 let Bg1 = document.querySelector(".bg-1");
 let Bg2 = document.querySelector(".bg-2");
@@ -32,14 +33,20 @@ let font16 = document.querySelector(".font-16");
 let font17 = document.querySelector(".font-17");
 
 
-/*============  Change Navbar Background ===================*/
+/*============  Change Navbar Background and show up to top Button ===================*/
 window.onscroll = () => {
   if (window.pageYOffset >= 200) {
+    btnToTop.classList.add("show");
     navbar.classList.add("scroll");
   } else {
     navbar.classList.remove("scroll");
+    btnToTop.classList.remove("show");
   }
 };
+// scroll tot top
+btnToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0 });
+});
 
 function removeActiveLink() {
   navLinks.forEach((nav) => {
@@ -242,3 +249,57 @@ heartIcons.forEach(her => {
 });
 
 
+// customize form and handle data
+//======================= Contact Form ====================
+const FormAlert = document.querySelector("#form_alerts");
+const form = document.forms[ 'form-submit' ];
+
+// function for send form data by formspace
+async function handleSubmit(event) {
+  event.preventDefault();
+  var data = new FormData(event.target);
+  fetch(event.target.action, {
+    method: form.method,
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      successSubmit();
+      form.reset();
+    } else {
+      response.json().then(data => {
+        if (Object.hasOwn(data, 'errors')) {
+          faildSubmit();
+          FormAlert.innerHTML = `<div class="alert alert-danger">Can't send an empty form </div>`;
+          document.querySelector(".alert").style.top = "15px";
+        } else {
+          faildSubmit();
+        }
+      });
+    }
+  }).catch(error => {
+    faildSubmit();
+  });
+}
+
+// when clcik the form button
+form.addEventListener("submit", handleSubmit);
+
+
+// function for success and field when submit
+function faildSubmit() {
+  FormAlert.innerHTML = `<div class="alert alert-danger">Oops! There was a problem submitting your form</div>`;
+  document.querySelector(".alert").style.top = "15px";
+  setTimeout(() => {
+    document.querySelector(".alert").style.top = "-150px";
+  }, 2000);
+}
+function successSubmit() {
+  FormAlert.innerHTML = `<div class="alert alert-success">Message Send Successfully</div>`;
+  document.querySelector(".alert").style.top = "15px";
+  setTimeout(() => {
+    document.querySelector(".alert").style.top = "-150px";
+  }, 2000);
+}
