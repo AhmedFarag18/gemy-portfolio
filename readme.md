@@ -7,8 +7,8 @@ Gamal is a Junior android developer, He always aspire to know what is new in my 
 - Javascript
 - Bootstrap grid
 - Media Query
-- <a href="https://ionic.io/ionicons">ionicons</a> for Icons
-- <a href="https://www.formspree.io">formspree</a> for form
+- [Markdown Guide](https://www.markdownguide.org)
+- [ionicons](https://ionic.io/ionicons) for Icons
+- [formspree](https://www.formspree.io) for form
 
-
-### preview Link  <a href="https://ahmedfarag18.github.io/gemy-portfolio/">#Live</a>
+### Preview [#Live](https://www.formspree.io)
