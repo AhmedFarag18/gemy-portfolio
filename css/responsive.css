@@ -32,7 +32,7 @@
 
 @media (max-width: 767px) {
   .header-img {
-    display: none;
+    margin-top: 50px;
   }
   .links {
     margin-top: 2.5rem;
