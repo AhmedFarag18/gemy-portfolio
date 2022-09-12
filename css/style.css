@@ -113,7 +113,7 @@ ion-icon {
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  z-index: 9999999;
+  z-index: 99999;
   left: 50%;
   top: -115px;
   transform: translateX(-50%);
@@ -260,7 +260,7 @@ Main Buttons
   position: fixed;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 999;
   transition: 0.5s;
   padding: 0.5rem 0;
   background: #edf0f273;
@@ -847,7 +847,7 @@ body.dark .navbar.scroll {
   opacity: 0;
   transform: scale3d(10, 10, 10);
   transition: 0.5s;
-  z-index: 999999;
+  z-index: 9999;
   text-align: center;
   display: grid;
   place-items: center;
@@ -1081,5 +1081,48 @@ body.dark .navbar.scroll {
   }
   100% {
     bottom: 2%;
+  }
+}
+/* main-loader */
+
+.main-loader {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  z-index: 99999;
+  visibility: visible;
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+  transition: 0.3s;
+}
+.main-loader.show {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale3d(0, 0, 1);
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 4.8px;
+  display: inline-block;
+  position: relative;
+  background: var(--black);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  animation: animFw 1s linear;
+}
+
+@keyframes animFw {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }

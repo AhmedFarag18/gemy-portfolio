@@ -1,4 +1,5 @@
 /* ================== Select Al HTML Elements Neded ================== */
+let loader = document.querySelector(".main-loader");
 let navLinks = document.querySelectorAll(".nav-link");
 let heartIcons = document.querySelectorAll(".portfolio-item-heart");
 let dropdown = document.querySelector('.navbar-links');
@@ -32,6 +33,13 @@ let font14 = document.querySelector(".font-14");
 let font16 = document.querySelector(".font-16");
 let font17 = document.querySelector(".font-17");
 
+/*============  Page Loading ===================*/
+window.addEventListener("load", () => {
+  loader.classList.remove("show");
+  setTimeout(() => {
+    loader.classList.add("show");
+  }, 1000);
+});
 
 /*============  Change Navbar Background and show up to top Button ===================*/
 window.onscroll = () => {
