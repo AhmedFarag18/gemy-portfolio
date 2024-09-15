@@ -1,5 +1,9 @@
-## Gamal Portfolio
-Gamal is a Junior android developer, He always aspire to know what is new in my field of work to improve my quality and raise your standards and he is able to deal with the team and to learn and benefit from those who have more experience and share knowledge with my colleagues.
+## Android Developer Portfolio
+This portfolio website is designed for an Android developer, featuring a fully responsive in all devices.
+The site includes customizable settings, such as an option to adjust the font size throughout the website, catering to individual user preferences.
+Enhanced with various animations. Also It’s Built using HTML, CSS, and JavaScript, Bootstrap for responsive design and FormSpree for efficient form handling.
+
+
 
 ## Technologies used
 - HTML
